@@ -12,14 +12,15 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
 public class MainWindow extends Application {
-	public static ArrayList<Goal> goals = new ArrayList<Goal>();
+	
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
     
-        Scene scene = new Scene(root, 300, 275);
+        Scene scene = new Scene(root);
     
         stage.setTitle("FXML Welcome");
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }

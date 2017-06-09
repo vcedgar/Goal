@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -56,6 +57,11 @@ public class Goal {
 		}
 		times[index] = realTime;
 		percents[index] = percent;
+	}
+
+	@Override
+	public String toString() {
+		return name + "\t" + goalTime + "\t" + realTime + "\t" + percent;
 	}
 
 	public double getPercent() {
