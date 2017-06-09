@@ -1,5 +1,7 @@
 package application;
 	
+import java.util.ArrayList;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,11 +11,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
-
-public class Main extends Application {
+public class MainWindow extends Application {
+	public static ArrayList<Goal> goals = new ArrayList<Goal>();
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Window.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
     
         Scene scene = new Scene(root, 300, 275);
     

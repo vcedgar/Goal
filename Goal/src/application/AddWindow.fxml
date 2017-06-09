@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:controller="application.Controller" xmlns:fx="http://javafx.com/fxml/1">
+	
+	<Text text="Add Goal" 
+        GridPane.columnIndex="0" GridPane.rowIndex="0"
+        GridPane.columnSpan="2"/>
+ 
+    <Label text="Name:"
+        GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField 
+        GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+ 
+    <Label text="Minutes:"
+        GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <TextField 
+    	GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    	
+	<Button text = "Add" 
+		onAction = "#addGoal" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+	<Button text = "Done" fx:id = "closeButton"
+		onAction = "#exit" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+</GridPane>
+
