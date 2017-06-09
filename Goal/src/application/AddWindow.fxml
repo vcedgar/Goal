@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane fx:controller="application.Controller" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:controller="application.AddController" xmlns:fx="http://javafx.com/fxml/1">
 	
 	<Text text="Add Goal" 
         GridPane.columnIndex="0" GridPane.rowIndex="0"
@@ -14,12 +14,12 @@
  
     <Label text="Name:"
         GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <TextField 
+    <TextField fx:id = "nameField"
         GridPane.columnIndex="0" GridPane.rowIndex="2"/>
  
     <Label text="Minutes:"
         GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-    <TextField 
+    <TextField fx:id = "timeField"
     	GridPane.columnIndex="1" GridPane.rowIndex="2"/>
     	
 	<Button text = "Add" 
