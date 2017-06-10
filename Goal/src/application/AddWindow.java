@@ -7,7 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AddWindow extends Application {
+public class AddWindow {
 	public javafx.scene.control.ListView<String> goalList;
 	public ObservableList<String> goalString;
 	
@@ -16,12 +16,12 @@ public class AddWindow extends Application {
 		this.goalString = goalString;
 	}
 	
-	@Override
-	public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("AddWindow.fxml"));
+	public void start(Stage stage, Stage main) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/recs/AddWindow.fxml"));
         
         MyScene scene = new MyScene(root, 300, 275, goalList, goalString);
     
+        stage.initOwner(main);
         stage.setTitle("FXML Welcome");
         stage.setScene(scene);
         stage.show();

@@ -24,7 +24,6 @@ public class AddController {
     	String goal = goals.get(goals.size()-1).toString();
     	scene.goalString.add(goal);
     	scene.goalList.refresh();
-    	System.out.println(goal);
 
     }
     

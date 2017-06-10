@@ -11,7 +11,7 @@
 <?import javafx.collections.FXCollections?>
 
 <!-- Main Window -->
-<BorderPane fx:controller="application.MainController" 
+<BorderPane fx:id = "main" fx:controller="application.MainController" 
     xmlns:fx="http://javafx.com/fxml">
 	
 	<left><Button text = "+ Goal" onAction = "#newGoal"/></left>
