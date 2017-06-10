@@ -15,14 +15,13 @@ public class AddController {
 	@FXML private javafx.scene.control.Button closeButton;
 	@FXML private javafx.scene.control.TextField nameField;
 	@FXML private javafx.scene.control.TextField timeField;
-	private ArrayList<Goal> goals = new ArrayList<Goal>();
-
+	
     @FXML protected void addGoal(ActionEvent event) throws Exception{
         Node source = (Node) event.getSource();
         MyScene scene = (MyScene) source.getScene();
-    	goals.add(new Goal(nameField.getText(), Integer.parseInt(timeField.getText())));
-    	String goal = goals.get(goals.size()-1).toString();
-    	scene.goalString.add(goal);
+        Goal goal = new Goal(nameField.getText(), Integer.parseInt(timeField.getText()));
+    	MyScene.goals.add(goal);
+    	scene.goalString.add(goal.toString());
     	scene.goalList.refresh();
 
     }

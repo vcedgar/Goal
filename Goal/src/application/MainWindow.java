@@ -1,6 +1,10 @@
 package application;
 	
+import java.io.File;
 import java.util.ArrayList;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -19,23 +23,11 @@ public class MainWindow extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/recs/MainWindow.fxml"));
     
-        Scene scene = new Scene(root);
+        MyScene scene = new MyScene(root);
     
         stage.setTitle("FXML Welcome");
         stage.setMaximized(true);
         stage.setScene(scene);
-        stage.setOnShown(new EventHandler<WindowEvent>(){
-            @Override
-            public void handle(WindowEvent window)
-            {
-            	try {
-					(new InstallWindow()).start(new Stage(), stage);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-            }
-        });
         stage.show();
     }
 	
@@ -43,5 +35,13 @@ public class MainWindow extends Application {
 		launch(args);
 	}
 	
+	private void load(){
+		File file = new File("/save.txt");
+		
+	}
+	
+	private void save(){
+		
+	}
 	
 }

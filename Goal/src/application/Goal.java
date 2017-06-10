@@ -1,10 +1,13 @@
 package application;
 
+import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class Goal {
+public class Goal{
 	private String name;
 	private Date dateCreated;
 	
@@ -22,6 +25,41 @@ public class Goal {
 		
 		times = new int[100];
 		percents = new double[100];
+	}
+	
+	public Goal(String s) throws ParseException{
+		String[] save = s.split("\\s+");
+		this.name = save[0];
+		this.goalTime = Integer.parseInt(save[1]);
+		this.dateCreated = DateFormat.getDateInstance().parse(save[4]);
+		Date dateSaved = DateFormat.getDateInstance().parse(save[5]);
+		if(dateSaved.equals(new Date())){
+			this.realTime = Integer.parseInt(save[2]);
+			this.realTime = Integer.parseInt(save[3]);
+		}
+		else{
+			this.realTime = 0;
+			this.realTime = 0;
+		}
+		int i = 7;
+		this.times = new int[100];
+		this.percents = new double[100];
+		while(save[i] != "percents"){
+			times[i] = Integer.parseInt(save[i]);
+		}
+	}
+	
+	public String save(){
+		String s = name + " " + goalTime + " " + realTime + " " + percent + " " + DateFormat.getDateInstance().format(dateCreated);
+		s += " " + DateFormat.getDateInstance().format(new Date()) + " times ";
+		for(int i = 0; i < times.length; i++){
+			s += times[i] + " ";
+		}
+		s+= "precents ";
+		for(int i = 0; i < times.length; i++){
+			s += times[i] + " ";
+		}
+		return s + "#####";
 	}
 
 	public String getName() {
@@ -66,6 +104,14 @@ public class Goal {
 
 	public double getPercent() {
 		return percent;
+	}
+	
+	public int[] setTimes() {
+		return times;
+	}
+
+	public double[] setPercents() {
+		return percents;
 	}
 
 	public int[] getTimes() {
